@@ -1,0 +1,32 @@
+.container
+	.row
+		.col-xs-6.col-xs-offset-3
+
+			.panel.panel-default{ style: "margin-top: 60px;" }
+				.panel-heading
+					%h3.panel-title
+						Sign In
+
+				.panel-body
+					= form_for resource, as: resource_name, url: session_path( resource_name ) do |f|
+						.row
+							.form-group.col-md-10
+								.input-group
+									.input-group-addon
+										%i.fa.fa-user
+									= f.text_field :login, autofocus: true, placeholder: "email", class: 'form-control'
+						.row
+							.form-group.col-md-10
+								.input-group
+									.input-group-addon
+										%i.fa.fa-key
+									= f.password_field :password, placeholder: "password", class: 'form-control'
+
+						.input-group.col-md-12
+							= f.submit "Sign in", class: 'btn btn-primary'
+
+
+				.panel-footer
+					
+
+
