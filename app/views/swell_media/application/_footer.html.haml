@@ -1,9 +1,50 @@
 
+
+%footer
+	.container
+		.row
+			/ Contact Us
+			.col-sm-4
+				%h4
+					%i.fa.fa-map-marker.text-red
+					Contact Us
+				
+				%p
+					Juggle Bugs Made With Love in:
+					%br
+					San Diego, CA
+				%p 
+					Do not hesitate to contact us if you have any questions!
+				%p
+					Email:
+					%a{href: "#"} admin@mysite.com
+			
+			.col-sm-4
+				
+			/ Newsletter
+			.col-sm-4
+				%h4
+					%i.fa.fa-envelope.text-red
+					Newsletter
+				%p
+					Enter your e-mail below to subscribe to our free newsletter and get updates on Juggle Bugs.
+					%br/
+					We promise not to bother you often!
+				%form.form{role: "form"}
+					.row
+						.col-sm-8
+							.input-group
+								%label.sr-only{for: "subscribe-email"} Email address
+								%input#subscribe-email.form-control{placeholder: "Enter your email", type: "email"}/
+								%span.input-group-btn
+									%button.btn.btn-default{type: "submit"} OK
+/ Copyright
 .container
 	.row
-		.col-xs-12
+		.col-sm-12
 			.copyright
 				©
 				= Time.now.year
 				= ENV['APP_NAME']
-				All rights reserved.
+				| All Rights Reserved
+

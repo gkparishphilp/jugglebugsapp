@@ -15,19 +15,64 @@
 			= render 'swell_media/application/navbar'
 
 		= render 'swell_media/application/flash'
+		.fullscreen
+			.container
+				.row
+					.col-sm-8.col-md-6
+						%h1.animated.slideInDown Coming soon: Juggle Bugs!
+						%hr.animated.slideInDown.delay-1/
+						%h3.animated.slideInLeft.delay-2 A Fun and Educational Game. For iOS and Android phones and tablets.
+						%a.btn.btn-default.btn-lg.animated.fadeInUpBig.delay-3{href: "#"} Learn More!
+		-#.home-services
+			.container
+				.row
+					.col-sm-12.col-md-7
+						%ul
+							%li
+								%i.fa.fa-gears
+								%p
+									%span Built with
+									Bootstrap 3
+							%li
+								%i.fa.fa-flag
+								%p
+									Font Awesome
+									%span Icons
+							%li
+								%i.fa.fa-picture-o
+								%p
+									Isotope
+									%span Portfolio
+							%li
+								%i.fa.fa-envelope-o
+								%p
+									24/7 Support
+									%span by e-mail
 
-		%section#main{ style: 'margin-top:2em;' }
-			= yield
-		%br
-		%br
-		%br
-		%br
+		- if SwellMedia::Article.active.order( publish_at: :desc ).limit( 2 ).present?
+			.container{ style: 'margin-top:8em;' }
+				.row
+					.col-sm-12
+						%h2.text-center Recent Blog Posts
+				.row
+					- SwellMedia::Article.active.order( publish_at: :desc ).limit( 2 ).each do |article|
+						.col-sm-6
+							.blog
+								= article.user.avatar_tag
+								.blog-desc
+									%h3
+										%a{ href: article.url } 
+											= article.title
+									%hr
+									%p.text-muted 
+										by 
+										= article.user
+									%p 
+										= article.description
+									%a.btn.btn-lg.btn-red{ href: article.url } 
+										Read More...
+					
 
-		= javascript_include_tag "js/jquery-1.8.3.min.js", "data-turbolinks-track" => true
-		= javascript_include_tag "//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js", "data-turbolinks-track" => true
-		= javascript_include_tag "js/prettify.js", "data-turbolinks-track" => true
-		= javascript_include_tag "js/lightbox.js", "data-turbolinks-track" => true
-		= javascript_include_tag "js/main.js", "data-turbolinks-track" => true
+		= render 'swell_media/application/footer'
 
-		%footer#footer
-			= render 'swell_media/application/footer'
+		

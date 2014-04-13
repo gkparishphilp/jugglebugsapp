@@ -80,4 +80,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.app_domain = ENV['APP_DOMAIN'] || 'www.jugglebugsapp.com'
+
+
 end

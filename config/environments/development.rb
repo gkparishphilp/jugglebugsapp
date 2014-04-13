@@ -34,4 +34,5 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  config.app_domain = ENV['APP_DOMAIN'] || 'localhost:3005'
 end
