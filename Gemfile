@@ -31,6 +31,8 @@ gem 'spring',        group: :development
 # Use unicorn as the app server
 gem 'unicorn'
 
+gem 'rails_12factor', group: :production
+
 # prod
 gem 'swell_media', git: 'git://github.com/playswell/swell_media.git'
 
