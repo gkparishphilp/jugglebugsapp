@@ -10,7 +10,6 @@
 		= render 'swell_media/application/html_head', args: {}
 	%body
 		= render 'swell_media/application/analytics'
-		= render 'swell_media/application/fb_js_sdk'
 		%header#header
 			= render 'swell_media/application/navbar'
 
@@ -22,7 +21,8 @@
 						%h1.animated.slideInDown Coming soon: Juggle Bugs!
 						%hr.animated.slideInDown.delay-1/
 						%h3.animated.slideInLeft.delay-2 A Fun and Educational Game. For iOS and Android phones and tablets.
-						%a.btn.btn-default.btn-lg.animated.fadeInUpBig.delay-3{href: "#"} Learn More!
+						%a.btn.btn-default.btn-lg.animated.fadeInUpBig.delay-3{ href: '/about' } 
+							Learn More!
 		-#.home-services
 			.container
 				.row

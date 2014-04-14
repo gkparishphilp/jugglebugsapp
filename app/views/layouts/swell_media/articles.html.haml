@@ -6,28 +6,25 @@
 %html{ lang: :en }
 	%head
 		= render 'swell_media/application/html_head', args: {}
-	
 	%body
 		= render 'swell_media/application/analytics'
-		= render 'swell_media/application/fb_js_sdk'
-		%header#header
-			= render 'swell_media/application/navbar'
+		= render 'swell_media/application/navbar'
 
-		%section#main{ style: 'margin-top:4em;' }
+		.wrapper
+			= render 'swell_media/application/breadcrumbs'
 			= render 'swell_media/application/flash'
-			= yield
-		%br
-		%br
-		%br
-		%br
+			.container
+				.row
+					.col-sm-9
+						= yield
+					.col-sm-3
+						.well
+							Search
+						.well
+							Categories
 
-		= javascript_include_tag "js/jquery-1.8.3.min.js", "data-turbolinks-track" => true
-		= javascript_include_tag "//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js", "data-turbolinks-track" => true
-		= javascript_include_tag "js/prettify.js", "data-turbolinks-track" => true
-		= javascript_include_tag "js/lightbox.js", "data-turbolinks-track" => true
-		= javascript_include_tag "js/main.js", "data-turbolinks-track" => true
+		= render 'swell_media/application/footer'
 
-		%footer#footer
-			= render 'swell_media/application/footer'
+
 
 

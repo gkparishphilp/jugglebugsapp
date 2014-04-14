@@ -1,0 +1,14 @@
+
+.topic
+	.container
+		.row
+			.col-sm-4
+				%h3
+
+			.col-sm-8
+				%ol.breadcrumb.pull-right.hidden-xs
+					%li
+						%a{ href: '/' }
+							Home
+					%li.active
+						= @page_info[:title]
