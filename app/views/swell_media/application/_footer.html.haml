@@ -7,7 +7,7 @@
 			.col-sm-6
 				%h4
 					%i.fa.fa-map-marker.text-red
-					Contact Us
+					Contact
 				
 				%p
 					Juggle Bugs Made With Love in:
@@ -27,6 +27,8 @@
 					Enter your e-mail below to subscribe to our free newsletter and get updates on Juggle Bugs.
 					%br
 					We promise not to bother you often!
+				= form_tag '/optins', method: :post do
+					= submit_tag 'Test', class: 'btn btn-red'
 				%form.form{role: "form"}
 					.row
 						.col-sm-8

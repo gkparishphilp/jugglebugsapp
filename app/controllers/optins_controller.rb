@@ -3,6 +3,7 @@ class OptinsController < ApplicationController
 	skip_before_filter :verify_authenticity_token, :only => [ :create ]
 
 	def create
+	
 		email = params[:email]
 
 		contact = Contact.where( email: email, contact_type: 'optin' ).first_or_initialize

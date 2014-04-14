@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 		get		:adminit,	on: :member
 	end
 
+	resources :admin, only: :index
+
 	resources :contacts, concerns: :admin
 
 	resources :optins, concerns: :admin, only: :create

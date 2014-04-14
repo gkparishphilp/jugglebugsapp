@@ -7,7 +7,7 @@ class ContactsController < ApplicationController
 		authorize! :admin, Contact
 		@contacts = Contact.order( 'created_at desc' )
 
-		render layout: 'admin'
+		render layout: 'swell_media/admin'
 	end
 
 
@@ -16,7 +16,7 @@ class ContactsController < ApplicationController
 
 		if @contact.save
 			set_flash 'Thanks for your message!'
-			redirect_to root_path
+			redirect_to '/'
 		else
 			set_flash 'There was a problem with your message', :danger, @contact
 			render :new
@@ -26,6 +26,7 @@ class ContactsController < ApplicationController
 
 	def new
 		@contact = Contact.new	
+		set_page_info title: 'Contact'
 	end
 
 
