@@ -14,29 +14,26 @@
 					%br
 					San Diego, CA
 				%p 
-					Do not hesitate to contact us if you have any questions!
-				%p
-					Email:
-					%a{href: "#"} admin@mysite.com
+					Do not hesitate to 
+					%a{ href: '/contacts/new' }
+						contact us 
+					with any questions or suggestions!
 			
 			.col-sm-6
 				%h4
 					%i.fa.fa-envelope.text-red
 					Newsletter
 				%p
-					Enter your e-mail below to subscribe to our free newsletter and get updates on Juggle Bugs.
-					%br
-					We promise not to bother you often!
+					Enter your e-mail below to subscribe to our free newsletter and get updates on Juggle Bugs. We promise not to bother you often!
 				= form_tag '/optins', method: :post do
-					= submit_tag 'Test', class: 'btn btn-red'
-				%form.form{role: "form"}
-					.row
-						.col-sm-8
-							.input-group
-								%label.sr-only{for: "subscribe-email"} Email address
-								%input#subscribe-email.form-control{placeholder: "Enter your email", type: "email"}/
-								%span.input-group-btn
-									%button.btn.btn-default{type: "submit"} OK
+					.col-sm-10
+						.input-group
+							%label.sr-only{ for: "email" } 
+								Email address
+							= text_field_tag :email, '', placeholder: 'Enter Your Email', id: 'subscribe-email', class: 'form-control'
+							%span.input-group-btn= submit_tag 'Ok', class: 'btn btn-red'
+				
+					
 / Copyright
 .container
 	.row

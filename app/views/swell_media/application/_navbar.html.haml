@@ -15,13 +15,19 @@
 					%a{ href: '/' }
 						Home
 
+				%li{ class: set_css_if( path: '/about' ) }
+					%a{ href: '/about' }
+						About
+
 				%li{ class: set_css_if( controller: :articles ) }
 					%a{ href: swell_media.articles_path }
 						Blog
 
-				%li{ class: set_css_if( path: '/about' ) }
-					%a{ href: '/about' }
-						About
+				%li{ class: set_css_if( path: '/contacts/new' ) }
+					%a{ href: '/contacts/new' }
+						Contact
+
+				
 			-#
 				%ul.nav.navbar-nav.navbar-right
 					%li.dropdown.active

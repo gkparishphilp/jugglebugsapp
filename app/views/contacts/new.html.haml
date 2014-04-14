@@ -1,5 +1,12 @@
 .row
 	.col-sm-8
+
+		%h3.headline.first-child
+			%span
+				Contact
+		%p
+			We'd love to hear from you!
+
 		= form_for @contact do |f|
 			.form-group
 				= f.label :email
