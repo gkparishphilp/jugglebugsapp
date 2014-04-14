@@ -19,10 +19,28 @@
 						= yield
 					.col-sm-3
 						.well
-							Search
-						.well
-							Categories
+							%h3
+								%i.icon-search
+								Search My Blog
 
+							= form_tag articles_path, method: :get, class: 'no-margin-bottom form-search' do
+								%fieldset
+									.controls.controls-row
+										= text_field_tag :q, params[:q], class: 'form-control search-input span3', placeholder: "Input search query"
+									.controls.controls-row{ style:'margin-top:5px;' }
+										= submit_tag 'Search', class: 'btn btn-primary pull-right'
+						
+						- if @tags.present?
+							.well
+								%h3
+									%i.icon-tags
+									Tags
+								%ul
+									- @tags.each do |tag|
+										%li
+											%a.side-tag{ href: articles_path( tagged: tag.name ) }
+												= tag.name
+	
 		= render 'swell_media/application/footer'
 
 
