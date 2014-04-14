@@ -34,5 +34,17 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  ActionMailer::Base.smtp_settings = {
+      :port =>           '587',
+      :address =>        'smtp.mandrillapp.com',
+      :user_name =>      ENV['MANDRILL_USERNAME'],
+      :password =>       ENV['MANDRILL_APIKEY'],
+      :domain =>         'localhost',
+      :authentication => :plain
+  }
+  ActionMailer::Base.delivery_method = :smtp
+
+  
   config.app_domain = ENV['APP_DOMAIN'] || 'localhost:3005'
 end

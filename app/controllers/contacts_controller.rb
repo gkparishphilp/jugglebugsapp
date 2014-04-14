@@ -15,6 +15,7 @@ class ContactsController < ApplicationController
 		@contact = Contact.new( contact_params )
 
 		if @contact.save
+			AdminMailer.new_contact( contact ).deliver
 			set_flash 'Thanks for your message!'
 			redirect_to '/'
 		else

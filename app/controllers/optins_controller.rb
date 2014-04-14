@@ -3,7 +3,7 @@ class OptinsController < ApplicationController
 	skip_before_filter :verify_authenticity_token, :only => [ :create ]
 
 	def create
-	
+
 		email = params[:email]
 
 		contact = Contact.where( email: email, contact_type: 'optin' ).first_or_initialize
@@ -14,7 +14,7 @@ class OptinsController < ApplicationController
 			#list_id = mail_api.lists.list( list_name: 'Pre-Launch' )['data'].first['id']
 			#mail_api.lists.subscribe( { id: '27437bba9b', email: { email: email }, double_optin: true } )
 
-			#AdminMailer.new_contact( contact ).deliver
+			AdminMailer.new_contact( contact ).deliver
 
 			set_flash "Thanks for signing up!"
 			redirect_to :back
