@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
+	concern :admin do
+		get 	:admin, 	on: :collection
+		get		:adminit,	on: :member
+	end
 
 	resources :contacts, concerns: :admin
 
 	resources :optins, concerns: :admin, only: :create
-	
+
 
 	devise_scope :user do
         get '/login' => 'sessions#new', as: 'login'
