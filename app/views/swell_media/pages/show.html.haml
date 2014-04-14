@@ -1,11 +1,10 @@
 - cache( @media ) do
 	%article[@media]
-		.container
-			- if @media.show_title?
+		- if @media.show_title?
+			.container
 				.row
 					.col-xs-12
 						%h1
 							= raw @media.title
-			.row
-				.col-xs-12
-					= raw @media.content
+		
+		= raw @media.content
