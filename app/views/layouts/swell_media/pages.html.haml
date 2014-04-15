@@ -5,17 +5,17 @@
 //[if gt IE 8] <html class="no-js">
 %html{ lang: :en }
 	%head
-		= render 'swell_media/application/html_head', args: {}
+		= render 'application/html_head', args: {}
 	%body
-		= render 'swell_media/application/analytics'
-		= render 'swell_media/application/navbar'
+		= render 'application/analytics'
+		= render 'application/navbar'
 
 		.wrapper
-			= render 'swell_media/application/breadcrumbs'
-			= render 'swell_media/application/flash'
+			= render 'application/breadcrumb_nav'
+			= render 'application/flash'
 			.container
 				= yield
 
 
-		= render 'swell_media/application/footer'
+		= render 'application/footer'
 

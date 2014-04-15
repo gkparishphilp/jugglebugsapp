@@ -1,5 +1,3 @@
-
-
 %footer
 	.container
 		.row
@@ -32,15 +30,3 @@
 								Email address
 							= text_field_tag :email, '', placeholder: 'Enter Your Email', id: 'subscribe-email', class: 'form-control'
 							%span.input-group-btn= submit_tag 'Ok', class: 'btn btn-red'
-				
-					
-/ Copyright
-.container
-	.row
-		.col-sm-12
-			.copyright
-				©
-				= Time.now.year
-				= ENV['APP_NAME']
-				| All Rights Reserved
-
