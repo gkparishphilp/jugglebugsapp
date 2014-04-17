@@ -1,5 +1,6 @@
-PATH
-  remote: ../../../playswell/engines/swell_media
+GIT
+  remote: git://github.com/playswell/swell_media.git
+  revision: abcfc9439327678677da7b423806273c5317db79
   specs:
     swell_media (0.0.1)
       acts-as-taggable-on
@@ -76,9 +77,9 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     erubis (2.7.0)
-    excon (0.32.1)
+    excon (0.33.0)
     execjs (2.0.2)
-    fog (1.21.0)
+    fog (1.22.0)
       fog-brightbox
       fog-core (~> 1.21, >= 1.21.1)
       fog-json
@@ -86,10 +87,10 @@ GEM
     fog-brightbox (0.0.2)
       fog-core
       fog-json
-    fog-core (1.21.1)
+    fog-core (1.22.0)
       builder
-      excon (~> 0.32)
-      formatador (~> 0.2.0)
+      excon (~> 0.33)
+      formatador (~> 0.2)
       mime-types
       net-scp (~> 1.1)
       net-ssh (>= 2.1.3)
@@ -165,7 +166,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     raindrops (0.13.0)
-    rake (10.2.2)
+    rake (10.3.0)
     rdoc (4.1.1)
       json (~> 1.4)
     sass (3.2.19)
