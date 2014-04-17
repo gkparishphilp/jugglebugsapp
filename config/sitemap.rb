@@ -10,6 +10,6 @@ SitemapGenerator::Sitemap.sitemaps_path = 'com/sitemaps/'
 SitemapGenerator::Sitemap.create do
 	add '/'
 	SwellMedia.active.each do |media|
-		add "/#{media.slug}", lastmod: media.updated_at
+		add media.path, lastmod: media.updated_at
 	end
 end
