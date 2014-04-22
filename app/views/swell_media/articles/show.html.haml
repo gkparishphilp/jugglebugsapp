@@ -12,6 +12,8 @@
 				on 
 				= @media.publish_at.to_date.to_s( :long )
 
+				= render 'application/fb_like_button', url: @media.url
+
 			- if @media.avatar.present?
 				= image_tag @media.avatar, class: 'img-responsive'
 
