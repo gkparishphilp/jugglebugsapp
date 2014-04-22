@@ -1,4 +1,4 @@
-class AdminController < ApplicationController
+class AdminController < SwellMedia::AdminController
 
 	before_filter :authenticate_user!
 
