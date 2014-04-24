@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140414040355) do
+ActiveRecord::Schema.define(version: 20140424145819) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,14 +22,14 @@ ActiveRecord::Schema.define(version: 20140414040355) do
     t.integer  "user_id"
     t.integer  "parent_id"
     t.string   "name"
-    t.string   "label"
+    t.string   "display"
     t.string   "type"
     t.integer  "lft"
     t.integer  "rgt"
     t.string   "users_name",   default: "players"
     t.text     "description"
-    t.string   "status",       default: "active"
-    t.string   "availability", default: "public"
+    t.integer  "status",       default: 0
+    t.integer  "availability", default: 0
     t.integer  "seq"
     t.string   "slug"
     t.hstore   "properties"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20140414040355) do
     t.string   "contact_type"
     t.string   "http_referrer"
     t.string   "status",        default: "active"
+    t.hstore   "properties"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -77,26 +78,15 @@ ActiveRecord::Schema.define(version: 20140414040355) do
     t.text     "description"
     t.text     "content"
     t.string   "slug"
-    t.integer  "reward_threshold",                  default: 100
-    t.boolean  "is_commentable",                    default: true
-    t.boolean  "is_sticky",                         default: false
-    t.boolean  "show_title",                        default: true
+    t.boolean  "is_commentable",  default: true
+    t.boolean  "is_sticky",       default: false
+    t.boolean  "show_title",      default: true
     t.datetime "modified_at"
-    t.text     "keywords",                          default: [],       array: true
+    t.text     "keywords",        default: [],    array: true
     t.string   "duration"
     t.integer  "price"
-    t.integer  "cached_impression_count", limit: 8, default: 0
-    t.integer  "cached_comment_count",    limit: 8, default: 0
-    t.integer  "cached_vote_count",       limit: 8, default: 0
-    t.float    "cached_vote_score",                 default: 0.0
-    t.integer  "cached_upvote_count",     limit: 8, default: 0
-    t.integer  "cached_downvote_count",   limit: 8, default: 0
-    t.float    "score",                             default: 0.0
-    t.float    "previous_score",                    default: 0.0
-    t.float    "decayed_score",                     default: 0.0
-    t.datetime "score_updated_at"
-    t.string   "status",                            default: "active"
-    t.string   "availability",                      default: "public"
+    t.integer  "status",          default: 0
+    t.integer  "availability",    default: 0
     t.datetime "publish_at"
     t.hstore   "properties"
     t.datetime "created_at"
@@ -118,7 +108,8 @@ ActiveRecord::Schema.define(version: 20140414040355) do
     t.integer  "height"
     t.integer  "width"
     t.string   "caption"
-    t.string   "status",     default: "active"
+    t.integer  "status",       default: 0
+    t.integer  "availability", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -134,7 +125,7 @@ ActiveRecord::Schema.define(version: 20140414040355) do
     t.string   "refresh_token"
     t.string   "secret"
     t.datetime "expires_at"
-    t.string   "status",        default: "active"
+    t.integer  "status",        default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -201,7 +192,7 @@ ActiveRecord::Schema.define(version: 20140414040355) do
     t.string   "state"
     t.string   "zip"
     t.string   "phone"
-    t.string   "status",                           default: "active"
+    t.integer  "status",                           default: 0
     t.integer  "level",                            default: 1
     t.integer  "max_investment",                   default: 10
     t.integer  "investment_cap",                   default: 100
