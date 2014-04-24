@@ -39,5 +39,5 @@ gem 'rails_12factor', group: :production
 gem 'swell_media', git: 'git://github.com/playswell/swell_media.git'
 
 # dev
-# gem 'swell_media', path: '../../../playswell/engines/swell_media' 
+# gem 'swell_media', path: '../../playswell/engines/swell_media' 
 
